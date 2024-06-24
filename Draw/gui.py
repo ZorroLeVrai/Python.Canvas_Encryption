@@ -1,8 +1,8 @@
-from tkinter import *
+import tkinter as tk
 from PIL import Image, ImageTk
 
-def create_widget_screen(title: str) -> Tk:
-    ws = Tk()
+def create_widget_screen(title: str) -> tk.Tk:
+    ws = tk.Tk()
     ws.title(title)
     return ws
 
@@ -10,6 +10,14 @@ def create_widget_screen(title: str) -> Tk:
 def open_picture(file_name: str) -> Image:
     #load the image
     return Image.open(file_name)
+
+
+def create_canvas(ws: tk.Tk):
+    canvas = tk.Canvas(ws, width=250, height=250, bg='white')
+    canvas.pack(padx=10, pady=10)
+
+    # Draw a rectangle on the canvas
+    canvas.create_rectangle(50, 50, 150, 100, fill='blue')
 
 
 def create_image() -> Image:

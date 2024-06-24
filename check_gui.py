@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
-from Draw.gui import create_widget_screen, open_picture, modify_image, get_tkimage, create_image
+from Draw.gui import create_widget_screen, open_picture, modify_image, get_tkimage, create_image, create_canvas
 
 def display_picture():
     img = open_picture(r".\Pythagore_V1.png")
@@ -14,6 +14,8 @@ img = create_image()
 
 photoImage = get_tkimage(img)
 Label(ws, image=photoImage).pack()
+
+create_canvas(ws)
 
 #main loop
 ws.mainloop()
