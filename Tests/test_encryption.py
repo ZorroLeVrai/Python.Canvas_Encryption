@@ -1,6 +1,6 @@
 import pytest
 import string
-from Draw import generate_encryption_key, encrypt_file, decrypt_file
+from Draw import generate_encryption_key, encrypt_input, decrypt_input
 
 @pytest.fixture
 def initial_setup():
@@ -11,6 +11,6 @@ def initial_setup():
 def test_encryption_decryption(initial_setup):
     key = initial_setup
     initial_data = string.ascii_lowercase.encode("utf-8")
-    processed_data = encrypt_file(key, initial_data)
-    output_data = decrypt_file(key, processed_data)
+    processed_data = encrypt_input(key, initial_data)
+    output_data = decrypt_input(key, processed_data)
     assert initial_data == output_data

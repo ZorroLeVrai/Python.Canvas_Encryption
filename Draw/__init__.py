@@ -1,1 +1,1 @@
-from .encryption import generate_encryption_key, encrypt_file, decrypt_file
+from .encryption import generate_encryption_key, encrypt_input, decrypt_input
